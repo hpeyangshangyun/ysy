@@ -10,16 +10,26 @@
 	<div class="content">
 		<div>
 			<!-- 左侧的导航 -->
-			<div>
-				<div>html</div>
-				<div>css</div>
-				<div>js</div>
+			<div class="col-2 floatLeft" id="leftNav">
+				<!-- 导航的内容 -->
+				<div class="col-9 floatLeft">
+					<div>html</div>
+					<div>css</div>
+					<div>js</div>
+				</div>
+				<!-- 导航是否显示的边框 -->
+				<div class="col-1 floatLeft">
+					<div class="navBorder1"></div>
+					<div class="arrows" onclick="leftNav()">&#9756;</div>
+					<div class="navBorder1"></div>
+				</div>
 			</div>
 			<!-- 右侧的内容部分 -->
-			<div></div>
+			<div class="col-8 floatLeft">内容部分</div>
 		</div>
 	</div>
 </body>
 <script type="text/javascript" src="./js/jquery3.2.js"></script>
 <script type="text/javascript" src="./js/base.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
 </html>

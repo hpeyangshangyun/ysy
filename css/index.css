@@ -1,1 +1,16 @@
 /*首页的css样式*/
+.leftNav{
+	height: 600px;
+}
+/*导航边框样式1*/
+.navBorder1{
+	height: 275px;
+	width: 2px;
+	border-right: 1px dotted #333333;
+}
+/*导航向左或者向右的箭头设置*/
+.arrows{
+	font-size: 36px;
+	font-weight: bold;
+	color: #FFC83D;
+}
