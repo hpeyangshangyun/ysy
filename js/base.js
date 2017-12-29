@@ -12,3 +12,7 @@ function getQueryString(name) {
     if (r != null) return unescape(r[2]); return null;
 }
 
+// 打开新的窗口
+function openWin(url){
+	window.open(url)
+}
