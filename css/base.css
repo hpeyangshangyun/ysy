@@ -35,7 +35,7 @@ input[type="button"]{
 	text-align: right;
 }
 .hidden{
-	display: hidden;
+	display: none;
 }
 /*****************css的全局设置***结束************************************/
 
