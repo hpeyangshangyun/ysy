@@ -31,9 +31,14 @@ function leftNav(item){
 	}
 }
 // 根据左侧的选择进行右侧显示区域的显示
-function rightShow(url,item){
+function rightShow(url,item,type){
+	// type=0==>代表的是左侧的导航
+	// type==1代表的是右侧内容中的导航
 	$("#rightShow").load(url);
-	changeNav(item);
+	if(type==0){
+		changeNav(item);
+	}
+	
 }
 // 左侧导航切换时的样式切换
 function changeNav(item){
