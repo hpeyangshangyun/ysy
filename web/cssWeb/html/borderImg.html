@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>图片边框</title>
+	<link rel="stylesheet" type="text/css" href="./css/base.css">
+</head>
+<style type="text/css">
+	.border0{
+		border-image: url('./images/1.PNG');
+		border-width: 10px;
+		border-style: solid;
+		border-right: 0;
+		border-bottom: 0;
+		color: red;
+	}
+	.border1{
+		border-left: 1px solid #ddff33;
+	}
+</style>
+<body>
+	<div>
+		<div class="border0">
+			<div class="border1" style="height: 50px;margin-left: -6px">第一个，高度50px;</div>
+		</div>
+		<div class="border0">
+			<div class="border1" style="height: 100px;margin-left: -6px">第二个，高度100px</div>
+		</div>
+		<div class="border0"> 
+			<div class="border1" style="height: 150px;margin-left: -6px">第三个，高度150px</div>
+		</div>
+	</div>
+</body>
+</html>
