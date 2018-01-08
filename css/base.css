@@ -42,7 +42,7 @@ input[type="button"]{
 /******************宽度设置和浮动的设置***开始*************************************************/
 .content{
 	width: calc(80vw + 2px);
-	margin: 0 auto;
+	margin: 20px auto 0;
 }
 /*宽度*/
 .col-1{

@@ -31,6 +31,12 @@ function leftNav(item){
 	}
 }
 // 根据左侧的选择进行右侧显示区域的显示
-function rightShow(url){
+function rightShow(url,item){
 	$("#rightShow").load(url);
+	changeNav(item);
+}
+// 左侧导航切换时的样式切换
+function changeNav(item){
+	$(item).parent().find("div").removeClass("navClick");
+	$(item).addClass("navClick");
 }

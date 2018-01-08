@@ -18,3 +18,7 @@
 	color: #FFC83D;
 	cursor: pointer;
 }
+/*被选中的导航的样式*/
+.navClick{
+	background-color: #0044ff;
+}
