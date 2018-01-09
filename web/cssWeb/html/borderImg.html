@@ -5,16 +5,31 @@
 	<link rel="stylesheet" type="text/css" href="./css/base.css">
 </head>
 <style type="text/css">
+	/*第一种方法*/
 	.border0{
 		border-image: url('./images/1.PNG');
 		border-width: 10px;
 		border-style: solid;
 		border-right: 0;
 		border-bottom: 0;
-		color: red;
+		/*color: initial;*/
+		/*filter: alpha(opacity=0)*/
 	}
 	.border1{
 		border-left: 1px solid #ddff33;
+	}
+	/*第二种方法*/
+	.idea2{
+		
+	}
+	.idea2>div:before{
+		width: 2px;
+		border-left: 1px solid red;
+		height: inherit;
+		float: left;
+		display: block;
+		content: " ";/*必有*/
+		margin-left: -5px
 	}
 </style>
 <body>
@@ -30,15 +45,34 @@
 	</div>
 	<!-- 内容部分 -->
 	<div>
-		<div class="border0">
-			<div class="border1" style="height: 50px;margin-left: -6px">第一个，高度50px;</div>
-		</div>
-		<div class="border0">
-			<div class="border1" style="height: 100px;margin-left: -6px">第二个，高度100px</div>
-		</div>
-		<div class="border0"> 
-			<div class="border1" style="height: 150px;margin-left: -6px">第三个，高度150px</div>
-		</div>
+		<fieldset>
+			<legend>方法1(使用div嵌套，外层div边框为图像，内层为左边线)</legend>
+			<div>
+				<div class="border0">
+					<div class="border1" style="height: 50px;margin-left: -6px">第一个，高度50px;</div>
+				</div>
+				<div class="border0">
+					<div class="border1" style="height: 100px;margin-left: -6px">第二个，高度100px</div>
+				</div>
+				<div class="border0"> 
+					<div class="border1" style="height: 150px;margin-left: -6px">第三个，高度150px</div>
+				</div>
+			</div>
+		</fieldset>
+		<fieldset>
+			<legend>方法2(使用伪元素,div控制图像，伪元素控制左边框)</legend>
+			<div>
+				<div class="border0 idea2">
+					<div style="height: 80px">方法2的第一个(80px)</div>
+				</div>
+				<div class="border0 idea2" style="margin-top: 20px">
+					<div style="height: 180px">方法2的第二个(180px)</div>
+				</div>
+				<div class="border0 idea2" style="margin-top: 20px">
+					<div style="height: 250px">方法2的第一个(250px)</div>
+				</div>
+			</div>
+		</fieldset>
 	</div>
 	</div>
 </body>
