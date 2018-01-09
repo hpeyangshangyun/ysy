@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>cookies</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	// 向cookies写入数据
+	// document.cookie='name=test';
+// 因为出现特殊字符，出现乱码时的解决方案  encodeURI(str)
+	document.cookie='name="久久牌感冒灵"';
+	document.cookie='id=1';
+
+// 获取cookie
+// 因为出现特殊字符，出现乱码时的解决方案  decodeURI(str)
+	var cookieData=document.cookie;
+	console.log("cookie:",cookieData);
+	console.log(cookieData.split(";")[0].split('"'))
+	document.write(cookieData.split(";")[0].split('"')[1])
+</script>
+</html>

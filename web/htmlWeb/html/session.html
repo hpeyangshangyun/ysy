@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>cookies与session</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var data={
+		id: 1,
+		name: "root",
+	}
+
+
+	// JSON.stringify()==》从对象中解析出字符串
+	saveSession(JSON.stringify(data))
+	// 将数据存入session
+	function saveSession(data){
+		console.log("存入session的数据为",data)
+		window.sessionStorage['session']=data;
+	}
+
+
+	// 将数据从session中取出
+	function getSession(){
+		var tempData=window.sessionStorage.getItem("session");
+		return tempData;
+	}
+	// JSON.parse()===》从字符串中解析json对象
+	var getSession=JSON.parse(getSession());
+	console.log("取出session中的数据为",getSession.id)
+
+
+// 移除session
+function removeSession(sessionName){
+	window.sessionStorage.removeItem(sessionName)
+}
+// 判断session是否存在
+if(window.sessionStorage['session']){
+	console.log("存在")
+}else{
+	console.log("不存在")
+}
+
+removeSession("session");
+
+if(window.sessionStorage['session']){
+	console.log("存在")
+}else{
+	console.log("不存在")
+}
+</script>
+</html>
