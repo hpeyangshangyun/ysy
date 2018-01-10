@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js排序</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var arr=[5,3,4,2,1,7,8,9,6,0];
+	var tempArr=[];
+	// 这里不能使用tempArr=arr来进行赋值，否则当tempArr发生改变时，arr的值也会发生改变
+	arr.forEach(function(data){
+		tempArr.push(data)
+	});
+	var newArr=[];
+	var reWrite='原始数据为:<br/>';
+	arr.forEach(function(data,index){
+		if(index==arr.length-1){
+			reWrite+=data+"<br/>"
+		}else{
+			reWrite+=data+" ";
+		}
+	})
+
+	/**************************冒泡排序***********************************/
+	for(var i=0;i<tempArr.length;i++){
+		for(var j=i+1;j<tempArr.length;j++){
+			if(tempArr[i]>tempArr[j]){
+				var temp=tempArr[i];
+				tempArr[i]=tempArr[j];
+				tempArr[j]=temp;
+			}
+		}
+		newArr.push(tempArr[i]);
+	}
+	reWrite+="冒泡排序后的数组为:<br/>"
+	newArr.forEach(function(data,index){
+		if(index==newArr.length-1){
+			reWrite+=data+"<br/>"
+		}else{
+			reWrite+=data+" ";
+		}
+	})
+	/****************************直接插入***************************************/
+	/*
+	newArr=[];
+	newArr[0]=arr[0]
+	for (var i=1;i<arr.length;i++){
+		for(var j=0;j<arr.length;j++){
+			if(newArr[j]>arr[i]){
+
+			}
+		}
+	}
+	*/
+	document.write(reWrite);
+	console.log("原数组的长度为:"+arr.length+"<br/>新的数组的长度为:"+newArr.length)
+</script>
+</html>

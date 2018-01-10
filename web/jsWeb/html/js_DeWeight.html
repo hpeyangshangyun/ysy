@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>js去重</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+	var arr1=[1,0,1,3,5,6,8,3,5,8,3,1];
+	var newArr=[];
+	var reArr=[];
+	var printStr="原始数组为:"+"<br/>";
+	arr1.forEach(function(data,index){
+		console.log(index,"下标")
+		if(index==arr1.length-1){
+			printStr+=data+"<br/>";
+		}else{
+			printStr+=data+" ";
+		}
+	});
+	printStr+="去重后的数组为:<br/>"
+	reArr[0]=arr1[0];
+	for(var i=1;i<arr1.length;i++){
+		var re=true;
+		for(var j=0;j<reArr.length;j++){
+			if(reArr[j]!=arr1[i]){
+				re=false;
+			}else{
+				re=true;
+				j=reArr.length+100;
+			}
+		}
+		if(re==false){
+			reArr.push(arr1[i])
+		}
+	}
+	reArr.forEach(function(data,index){
+		if(index==reArr.length-1){
+			printStr+=data+"<br/>"
+		}else{
+			printStr+=data+" ";
+		}
+	})
+	document.write(printStr);
+</script>
+</html>
