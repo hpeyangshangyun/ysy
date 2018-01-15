@@ -44,6 +44,9 @@ input[type="button"]{
 	width: calc(80vw + 2px);
 	margin: 20px auto 0;
 }
+.content fieldset div{
+	text-indent: 2rem;
+}
 .center{
 	margin: 0 auto;
 }

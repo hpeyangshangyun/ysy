@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>个人的想法1</title>
+</head>
+<body>
+<div>
+	<div>
+		<fieldset>
+			<legend>laydate时间插件</legend>
+			<div>
+				在进行是时间的渲染时，只渲染一次。在选择时间段时，要设置时间选择的限制，由于laydate的时间插件只渲染一次，在进行一次时间选择后他的时间选择限制还是最起初的限制。所以这时不能直接将时间插件写在html中，需要使用js动态创建这个时间插件，在每一次时间选择改变后，删除先前创建的插件，再重新使用js渲染一次时间插件。
+			</div>
+		</fieldset>
+	</div>
+</div>
+</body>
+</html>

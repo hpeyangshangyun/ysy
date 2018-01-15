@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>闭包</title>
+</head>
+<body>
+	<label for=color>input的type为color</label>
+	<input type="color" name="color" value="red">
+</body>
+<script type="text/javascript">
+	var fun2;
+	function fun1(){
+		var str="fun1 的私有变量";
+		console.log("fun1内部输出",str);
+		fun2=function (){
+			return str;
+		}
+	}
+	fun1();
+	console.log("fun2的值:",fun2())
+</script>
+</html>
