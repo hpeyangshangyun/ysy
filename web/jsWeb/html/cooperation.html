@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>联动</title>
+</head>
+<body>
+	<div>
+		<select id='op1'></select>
+		<select id='op2'></select>
+	</div>
+</body>
+<script type="text/javascript">
+	var op1=[
+		{name:"请选择",value:0},
+		{name:'北京',value:1},
+		{name: '四川',value:2}
+	];
+	var op2=[
+		[
+			{name:"请选择",value:0},
+			{name: '北京',value:1},
+			{name: '大兴',value:2}
+		],
+		[
+			{name:"请选择",value:0},
+			{name: '锦江区',value:1},
+			{name: '高新区',value:2}
+		]
+	];
+
+	var opId1=document.getElementById('op1');
+	var re1='';
+		var opId2=document.getElementById('op2');
+	var re2='';
+	function loadFun(type,index) {
+		re2='';
+		if(type==0){//初次
+			for(var i=0;i<op1.length;i++){
+				if(op1[i].name=='北京'){
+					re1+='<option'+' value="'+op1[i].value+'" selected="selected" >'+op1[i].name+'</option>'
+				}else{
+					re1+='<option'+' value="'+op1[i].value+'">'+op1[i].name+'</option>'
+				}		
+			}
+
+			for(var j=0;j<op2[index].length;j++){
+				if(op2[index][j].name=='北京'){
+					re2+='<option'+' value="'+op2[index][j].value+'" selected="selected" >'+op2[index][j].name+'</option>'
+				}else{
+					re2+='<option'+' value="'+op2[index][j].value+'">'+op2[index][j].name+'</option>'
+				}
+				
+			}
+			opId1.innerHTML=re1;
+		}else{
+			for(var j=0;j<op2[index].length;j++){
+				re2+='<option'+' value="'+op2[index][j].value+'">'+op2[index][j].name+'</option>'
+			}
+		}
+		opId2.innerHTML='';
+		opId2.innerHTML=re2;
+	}
+	opId1.onchange=function(){
+		var opValue1=opId1.value;
+		opId2.innerHTML='';
+		opId2.innerHTML='<option>请选择</option>';
+		if(opValue1==0){
+			return false;
+		}else{
+			loadFun(1,opValue1-1);
+		}
+	}
+	window.onload=function(){
+		loadFun(0,0);
+	}
+</script>
+</html>

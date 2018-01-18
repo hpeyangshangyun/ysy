@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ajax相关</title>
+</head>
+<body>
+<div>
+	<fieldset>
+		<legend>ajax获取后台返回的状态码</legend>
+		<div>
+			<pre>
+				$.ajax({
+				    url: "/echo/xml/",
+				    type: "POST",
+				    data: {
+				        //Set an empty response to see the error
+				        xml: "<response></response>"   
+				    },
+				    dataType:"text xml",
+				    success: function(xml, textStatus, xhr) {
+				        console.log(arguments);
+				        console.log(xhr.status);
+				    },
+				    complete: function(xhr, textStatus) {
+				        console.log(xhr.status);
+				    } 
+				});
+			</pre>
+		</div>
+	</fieldset>
+</div>
+</body>
+</html>
