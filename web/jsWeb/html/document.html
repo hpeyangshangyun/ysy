@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>document的使用</title>
+</head>
+<body>
+<div>
+	
+</div>
+</body>
+<script type="text/javascript">
+	var re='';//结果
+	var br='<br/>'
+	re+="document.body: "+document.body+br;
+	re+='document.domain(获取当前的域名): '+document.domain+br;
+	re+='document.lastModified(返回文档最后被修改的时间): '+document.lastModified+br;
+	re+='document.referrer(返回载入当前文档的url): '+document.referrer+br;
+	re+='document.cookie(返回cookie): '+document.cookie+br;
+	re+='document.URL(返回当前的url): '+document.URL+br;
+	re+='document.title(title): '+document.title+br;
+	document.write(re);
+	console.log(document.body)
+</script>
+</html>

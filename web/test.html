@@ -1,32 +1,65 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+
 <html>
+
 <head>
-	<title>测试</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>无标题文档</title>
+
 </head>
+
 <body>
 
-</body>
-<script type="text/javascript">
 
-	var a=123456;//654321//777777
-	var te=a;
-	var re='原始数据是<br/>'+a+"<br/>";
-	a = a.toString();
-	/*
-	try{
-		alert(a.length)
-	}
-	catch(err){
-		alert(err)
-	}
-	*/
-	var b=[];
-	a = a.split("");
-	a.forEach(function(data){
-		b.unshift(data)
-		console.log('b',a)
-	})
-	b=b.join("")*1;
-	document.write(re+"====="+(b+te))
-</script>
+
+
+
+  <div><i id="oldnode">JavaScript</i>是一个很常用的技术，为网页添加动态效果。</div>
+
+  <a href="javascript:replaceMessage()"> 将加粗改为斜体</a><br/>
+
+  <a href="javascript:replaceMessage1()">将斜体改为粗体</a>
+
+    <script type="text/javascript">
+
+      function replaceMessage(){
+
+         
+          var newnode=document.createElement("i");
+			newnode.id='oldnode';
+          var oldNode=document.getElementById("oldnode");
+          console.log('i',oldNode)
+           var oldHTML= oldNode.innerHTML;      
+
+
+          oldNode.parentNode.replaceChild(newnode,oldNode);
+
+           newnode.innerHTML=oldHTML;
+
+       }   
+
+      function replaceMessage1(){
+
+      
+          var newnode=document.createElement("b");
+          newnode.id='oldnode';
+          var oldNode=document.getElementById("oldnode");
+              var oldHTML=oldNode.innerHTML;
+
+
+          oldNode.parentNode.replaceChild(newnode,oldNode);
+
+          newnode.innerHTML=oldHTML;
+
+      }
+
+  </script>
+
+  
+
+ </body>
+
 </html>
+
